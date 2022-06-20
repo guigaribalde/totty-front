@@ -1,6 +1,10 @@
 import React from 'react'
-import { Button as Btn } from '@chakra-ui/react'
+import { Button as Btn, ButtonProps } from '@chakra-ui/react'
 
-export const Button = () => {
-  return <Btn colorScheme="teal">asd</Btn>
+export const Button = (props: ButtonProps) => {
+  return (
+    <Btn colorScheme="brand" px="28px" {...props}>
+      {props.children}
+    </Btn>
+  )
 }

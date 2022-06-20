@@ -1,11 +1,7 @@
 import type { NextPage } from 'next'
-
+import { Button } from '../components/Button'
 const Home: NextPage = () => {
-  return (
-    <div>
-      <h1>teste</h1>
-    </div>
-  )
+  return <Button />
 }
 
 export default Home
