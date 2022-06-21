@@ -1,12 +1,11 @@
-import { Flex } from '@chakra-ui/react'
+import { Box, Flex } from '@chakra-ui/react'
 import type { NextPage } from 'next'
-import Logo from '../assets/Logo'
 
 const Home: NextPage = () => {
   return (
-    <Flex>
-      <Logo />
-    </Flex>
+    <Box>
+      <Flex pt="24" bgColor="gray.100"></Flex>
+    </Box>
   )
 }
 

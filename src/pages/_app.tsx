@@ -1,11 +1,15 @@
 import type { AppProps } from 'next/app'
-import { ChakraProvider } from '@chakra-ui/react'
+import { Box, ChakraProvider } from '@chakra-ui/react'
 import { theme } from '../themes/default'
+import { NavMenu } from '../components/NavMenu'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
-      <Component {...pageProps} />
+      <Box>
+        <NavMenu />
+        <Component {...pageProps} />
+      </Box>
     </ChakraProvider>
   )
 }
