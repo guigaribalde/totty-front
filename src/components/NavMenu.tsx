@@ -21,29 +21,14 @@ export const NavMenu = () => {
         <Flex direction="row">
           <Logo />
           <HStack ml="14" gap="7" direction="row">
-            <Text
-              cursor="pointer"
-              as="a"
-              color="gray.600"
-              _hover={{ opacity: '0.5' }}
-            >
-              explorar
+            <Text cursor="pointer" as="a" fontWeight="medium">
+              Explorar
             </Text>
-            <Text
-              cursor="pointer"
-              as="a"
-              color="gray.600"
-              _hover={{ opacity: '0.5' }}
-            >
-              startups
+            <Text cursor="pointer" as="a" fontWeight="medium">
+              Startups
             </Text>
-            <Text
-              cursor="pointer"
-              as="a"
-              color="gray.600"
-              _hover={{ opacity: '0.5' }}
-            >
-              desafios
+            <Text cursor="pointer" as="a" fontWeight="medium">
+              Desafios
             </Text>
           </HStack>
         </Flex>
