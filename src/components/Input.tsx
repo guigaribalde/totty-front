@@ -6,7 +6,7 @@ export const Input = (props: InputProps) => {
     <Inpt
       {...props}
       focusBorderColor="none"
-      _placeholder={{ color: 'gray.400' }}
+      _placeholder={{ color: 'gray.300' }}
       bgColor="white"
     />
   )
