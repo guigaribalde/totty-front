@@ -3,6 +3,7 @@ import { Box, ChakraProvider } from '@chakra-ui/react'
 import { theme } from '../themes/default'
 import { NavMenu } from '@components/NavMenu'
 import Head from 'next/head'
+import { Footer } from '@components/Footer'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -13,6 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Box>
         <NavMenu />
         <Component {...pageProps} />
+        <Footer />
       </Box>
     </ChakraProvider>
   )
