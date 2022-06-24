@@ -1,10 +1,17 @@
-import { Box, Flex } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 import type { NextPage } from 'next'
+import { HeroSection } from '@components/HeroSection'
+import { TopBussinessSection } from '@components/TopBussinessSection'
+import { SellMoreCard } from '@components/SellMoreCard'
+import { IntroCTASection } from '@components/IntroCTASection'
 
 const Home: NextPage = () => {
   return (
     <Box>
-      <Flex pt="24" bgColor="gray.100"></Flex>
+      <HeroSection />
+      <IntroCTASection />
+      <TopBussinessSection />
+      <SellMoreCard />
     </Box>
   )
 }
