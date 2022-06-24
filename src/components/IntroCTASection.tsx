@@ -15,7 +15,7 @@ export const IntroCTASection = () => {
       <Text fontSize="3xl" fontWeight="bold">
         O perfil digital da sua Startup
       </Text>
-      <Text w="588px" mt="5" color="gray.600">
+      <Text maxW="588px" w="100%" mt="5" color="gray.600">
         Centralizamos as informações da sua startup em um lugar só, assim você
         pode apresentar sua startup de uma maneira mais rápida e fácil. Deixe
         seu pitch falar por você!

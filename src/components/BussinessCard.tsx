@@ -9,7 +9,7 @@ export const BussinessCard = () => {
       borderColor="gray.200"
       px="5"
       py="8"
-      w="250px"
+      minW="250px"
       justify="space-between"
     >
       <Avatar name=" " bgColor="gray.100" />

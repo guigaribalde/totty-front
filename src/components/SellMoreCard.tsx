@@ -7,7 +7,8 @@ export const SellMoreCard = () => {
   return (
     <Flex mt="36" justify="center" align="center">
       <Flex
-        w="750px"
+        maxW="750px"
+        w="100%"
         px="20"
         py="14"
         textAlign="center"
@@ -15,7 +16,7 @@ export const SellMoreCard = () => {
         justify="center"
         align="center"
         bgColor="#F4EDF7"
-        borderRadius="10"
+        borderRadius={{ base: '0', md: '10' }}
       >
         <Text fontWeight="extrabold" fontSize="6xl" mb="5">
           VENDA MAIS
