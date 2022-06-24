@@ -9,7 +9,7 @@ import React from 'react'
 
 export const NavMenu = () => {
   return (
-    <Box position="fixed" w="100%">
+    <Box position="fixed" w="100%" zIndex="999">
       <Flex
         p="6"
         maxW="1000px"
