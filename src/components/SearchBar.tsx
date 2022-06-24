@@ -27,7 +27,7 @@ interface SearchBarProps {
 export const SearchBar = (props: SearchBarProps) => {
   const [focus, setFocus] = useState(false)
   return (
-    <Flex direction="row" w="100%">
+    <Flex direction={{ base: 'column', sm: 'row' }} w="100%">
       <InputGroup onFocus={() => setFocus(true)} onBlur={() => setFocus(false)}>
         <InputLeftElement pointerEvents="none" pl="4">
           <Icon
@@ -48,7 +48,11 @@ export const SearchBar = (props: SearchBarProps) => {
           bgColor="white"
         />
       </InputGroup>
-      <Button ml="2" onClick={props.onClick}>
+      <Button
+        ml={{ base: '0', sm: '2' }}
+        mt={{ base: '2', sm: '0' }}
+        onClick={props.onClick}
+      >
         Pesquisar
       </Button>
     </Flex>
