@@ -33,7 +33,7 @@ export const SearchBar = (props: SearchBarProps) => {
           <Icon
             as={FiCoffee}
             color={focus ? 'brand.500' : 'gray.400'}
-            transition="all 0.15s ease"
+            transition="all 0.3s ease"
             transform="scaleX(-1)"
           />
         </InputLeftElement>
