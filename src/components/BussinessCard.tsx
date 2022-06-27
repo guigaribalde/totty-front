@@ -30,7 +30,13 @@ export const BussinessCard = ({
         router.push(`/b/${business.slug}`)
       }}
     >
-      <Avatar name={business.name} bgColor="gray.100" color="gray.400" />
+      <Avatar
+        name={business.name}
+        src={business.logo}
+        bgColor="gray.100"
+        color="gray.400"
+        border="1px solid #E2E8F0"
+      />
       <Flex direction="column" ml="4" justify="center">
         <Text fontWeight="medium">{nameShortner(business.name, 15)}</Text>
         <Text fontSize="sm" color="gray.600">

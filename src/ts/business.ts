@@ -3,4 +3,5 @@ export interface ShortBusinessInterface {
   name: string
   segment: string
   slug: string
+  logo: string
 }

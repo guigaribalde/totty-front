@@ -4,6 +4,36 @@
       "id": 1,
       "name": "Creatus",
       "segment": "Tecnologia",
+      "slug": "Creatus",
+      "logo": "https://lh4.googleusercontent.com/-fp0jtrGtaoY/AAAAAAAAAAI/AAAAAAAAAAA/bsWagg4awvM/s88-p-k-no-ns-nd/photo.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Nafsio",
+      "segment": "Saúde",
+      "slug": "Nafsio",
+      "logo": null
+    },
+    {
+      "id": 3,
+      "name": "Contem.info",
+      "segment": "Fotos",
+      "slug": "ContemInfo",
+      "logo": null
+    },
+    {
+      "id": 4,
+      "name": "Alma Castelhana",
+      "segment": "Comida",
+      "slug": "AlmaCastelhana",
+      "logo": null
+    }
+  ],
+  "business": [
+    {
+      "id": 1,
+      "name": "Creatus",
+      "segment": "Tecnologia",
       "slug": "Creatus"
     },
     {
