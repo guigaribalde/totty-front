@@ -21,7 +21,7 @@ export const TopBussinessSection = () => {
       <Text fontSize="lg" fontWeight="semibold" mt="14" mb="5">
         Startups do mês
       </Text>
-      <Box overflow="scroll" w="100">
+      <Box overflowX="auto" w="100">
         <Flex justify="space-between" minW="1100px">
           <BussinessCard />
           <BussinessCard />
