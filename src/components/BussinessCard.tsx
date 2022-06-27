@@ -2,6 +2,7 @@ import { Avatar, Flex, Text } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 
 import { ShortBusinessInterface } from 'src/interfaces/business'
+import { nameShortner } from 'src/Utils'
 
 export const BussinessCard = ({
   business,
@@ -31,7 +32,7 @@ export const BussinessCard = ({
     >
       <Avatar name={business.name} bgColor="gray.100" color="gray.400" />
       <Flex direction="column" ml="4" justify="center">
-        <Text fontWeight="medium">{business.name}</Text>
+        <Text fontWeight="medium">{nameShortner(business.name, 15)}</Text>
         <Text fontSize="sm" color="gray.600">
           {business.segment}
         </Text>
