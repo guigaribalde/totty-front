@@ -11,15 +11,18 @@ export const BussinessCard = () => {
       py="8"
       minW="250px"
       justify="space-between"
+      cursor="pointer"
+      _hover={{
+        borderColor: 'brand.500',
+      }}
+      _active={{
+        opacity: '0.3',
+      }}
+      transition="all 0.2s ease"
     >
       <Avatar name=" " bgColor="gray.100" />
       <Flex direction="column" ml="4" justify="center">
-        <Text
-          fontWeight="medium
-            "
-        >
-          Nome da Startup
-        </Text>
+        <Text fontWeight="medium">Nome da Startup</Text>
         <Text fontSize="sm" color="gray.600">
           Setor
         </Text>
