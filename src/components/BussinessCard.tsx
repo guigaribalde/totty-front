@@ -2,7 +2,7 @@ import { Avatar, Flex, Text } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 
 import { ShortBusinessInterface } from '@ts/business'
-import { nameShortner, nameToURL } from '@utils/index'
+import { nameShortner } from '@utils/index'
 
 export const BussinessCard = ({
   business,
@@ -27,7 +27,7 @@ export const BussinessCard = ({
       }}
       transition="all 0.2s ease"
       onClick={() => {
-        router.push(`/b/${nameToURL(business.name)}`)
+        router.push(`/b/${business.slug}`)
       }}
     >
       <Avatar name={business.name} bgColor="gray.100" color="gray.400" />

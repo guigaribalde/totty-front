@@ -3,22 +3,26 @@
     {
       "id": 1,
       "name": "Creatus",
-      "segment": "Tecnologia"
+      "segment": "Tecnologia",
+      "slug": "Creatus"
     },
     {
       "id": 2,
       "name": "Nafsio",
-      "segment": "Saúde"
+      "segment": "Saúde",
+      "slug": "Nafsio"
     },
     {
       "id": 3,
       "name": "Contem.info",
-      "segment": "Fotos"
+      "segment": "Fotos",
+      "slug": "ContemInfo"
     },
     {
       "id": 4,
       "name": "Alma Castelhana",
-      "segment": "Comida"
+      "segment": "Comida",
+      "slug": "AlmaCastelhana"
     }
   ]
 }

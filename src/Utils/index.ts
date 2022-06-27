@@ -4,6 +4,3 @@ export const nameShortner = (name: string, limit: number): string => {
   }
   return name
 }
-export const nameToURL = (name: string): string => {
-  return name.replace(/\s/g, '')
-}
