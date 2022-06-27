@@ -1,7 +1,7 @@
 import { Box, Divider, Flex, Text } from '@chakra-ui/react'
-import React from 'react'
-import { ShortBusinessInterface } from 'src/interfaces/business'
-import { BussinessCard } from './BussinessCard'
+
+import { ShortBusinessInterface } from '@ts/business'
+import { BussinessCard } from '@components/BussinessCard'
 
 export const TopBussinessSection = ({
   businesses,

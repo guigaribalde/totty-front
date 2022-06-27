@@ -1,6 +1,6 @@
 import { Box, Flex, Text } from '@chakra-ui/react'
-import React from 'react'
-import { SearchBar } from './SearchBar'
+
+import { SearchBar } from '@components/SearchBar'
 
 export const HeroSection = () => {
   return (

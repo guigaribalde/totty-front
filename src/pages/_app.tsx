@@ -1,8 +1,9 @@
 import type { AppProps } from 'next/app'
 import { Box, ChakraProvider } from '@chakra-ui/react'
-import { theme } from '../themes/default'
-import { NavMenu } from '@components/NavMenu'
 import Head from 'next/head'
+
+import { theme } from '@themes/default'
+import { NavMenu } from '@components/NavMenu'
 import { Footer } from '@components/Footer'
 
 function MyApp({ Component, pageProps }: AppProps) {

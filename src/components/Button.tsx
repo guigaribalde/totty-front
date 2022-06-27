@@ -1,4 +1,3 @@
-import React from 'react'
 import { Button as Btn, ButtonProps } from '@chakra-ui/react'
 
 export const Button = (props: ButtonProps) => {

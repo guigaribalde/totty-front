@@ -1,19 +1,20 @@
 import {
-  Flex,
-  Icon,
-  Input,
-  InputGroup,
-  InputLeftElement,
-} from '@chakra-ui/react'
-import {
   ChangeEvent,
   ChangeEventHandler,
   MouseEvent,
   MouseEventHandler,
   useState,
 } from 'react'
-import { Button } from './Button'
+import {
+  Flex,
+  Icon,
+  Input,
+  InputGroup,
+  InputLeftElement,
+} from '@chakra-ui/react'
 import { FiCoffee } from 'react-icons/fi'
+
+import { Button } from '@components/Button'
 interface SearchBarProps {
   onChange?: (
     event: ChangeEvent<HTMLInputElement>

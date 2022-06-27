@@ -1,7 +1,7 @@
 import { Flex, Icon, Text } from '@chakra-ui/react'
-import React from 'react'
 import { FiChevronRight } from 'react-icons/fi'
-import { Button } from './Button'
+
+import { Button } from '@components/Button'
 
 export const SellMoreCard = () => {
   return (

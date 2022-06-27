@@ -1,8 +1,8 @@
 import { Avatar, Flex, Text } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 
-import { ShortBusinessInterface } from 'src/interfaces/business'
-import { nameShortner, nameToURL } from 'src/Utils'
+import { ShortBusinessInterface } from '@ts/business'
+import { nameShortner, nameToURL } from '@utils/index'
 
 export const BussinessCard = ({
   business,

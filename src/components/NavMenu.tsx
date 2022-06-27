@@ -1,5 +1,6 @@
 //TODO: logged in and logged out;
 
+import React, { useEffect, useState } from 'react'
 import {
   Box,
   Drawer,
@@ -15,10 +16,10 @@ import {
   Button as ChakraButton,
   VStack,
 } from '@chakra-ui/react'
-import Logo from '../assets/Logo'
-import { Button } from './Button'
-import React, { useEffect, useState } from 'react'
 import { FiMenu } from 'react-icons/fi'
+
+import Logo from '@assets/Logo'
+import { Button } from '@components/Button'
 
 const MAX_SCROLL_HEIGHT = 10
 

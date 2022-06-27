@@ -1,4 +1,3 @@
-import React from 'react'
 import { Input as Inpt, InputProps } from '@chakra-ui/react'
 
 export const Input = (props: InputProps) => {

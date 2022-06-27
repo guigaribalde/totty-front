@@ -1,11 +1,12 @@
 import { Box } from '@chakra-ui/react'
 import type { GetStaticProps } from 'next'
+import axios from 'axios'
+
 import { HeroSection } from '@components/HeroSection'
 import { TopBussinessSection } from '@components/TopBussinessSection'
 import { SellMoreCard } from '@components/SellMoreCard'
 import { IntroCTASection } from '@components/IntroCTASection'
-import axios from 'axios'
-import { ShortBusinessInterface } from 'src/interfaces/business'
+import { ShortBusinessInterface } from '@ts/business'
 
 export const getStaticProps: GetStaticProps = async () => {
   const { data: businesses }: { data: ShortBusinessInterface[] } =
