@@ -2,23 +2,23 @@
   "top_business": [
     {
       "id": 1,
-      "name": "Company 1",
-      "segment": "Technology"
+      "name": "Creatus",
+      "segment": "Tecnologia"
     },
     {
       "id": 2,
-      "name": "Company 2",
-      "segment": "Technology"
+      "name": "Nafsio",
+      "segment": "Saúde"
     },
     {
       "id": 3,
-      "name": "Company 3",
-      "segment": "Technology"
+      "name": "Contem.info",
+      "segment": "Fotos"
     },
     {
       "id": 4,
-      "name": "Company 4",
-      "segment": "Technology"
+      "name": "Alma Castelhana",
+      "segment": "Comida"
     }
   ]
 }

@@ -17,7 +17,6 @@ export const BussinessCard = ({
       px="5"
       py="8"
       minW="250px"
-      justify="space-between"
       cursor="pointer"
       _hover={{
         borderColor: 'brand.500',
@@ -30,7 +29,7 @@ export const BussinessCard = ({
         router.push(`/b/${business.name}`)
       }}
     >
-      <Avatar name=" " bgColor="gray.100" />
+      <Avatar name={business.name} bgColor="gray.100" color="gray.400" />
       <Flex direction="column" ml="4" justify="center">
         <Text fontWeight="medium">{business.name}</Text>
         <Text fontSize="sm" color="gray.600">
