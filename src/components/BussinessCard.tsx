@@ -1,7 +1,14 @@
 import { Avatar, Flex, Text } from '@chakra-ui/react'
-import React from 'react'
+import { useRouter } from 'next/router'
 
-export const BussinessCard = () => {
+import { ShortBusinessInterface } from 'src/interfaces/business'
+
+export const BussinessCard = ({
+  business,
+}: {
+  business: ShortBusinessInterface
+}) => {
+  const router = useRouter()
   return (
     <Flex
       border="1px"
@@ -19,12 +26,15 @@ export const BussinessCard = () => {
         opacity: '0.3',
       }}
       transition="all 0.2s ease"
+      onClick={() => {
+        router.push(`/b/${business.name}`)
+      }}
     >
       <Avatar name=" " bgColor="gray.100" />
       <Flex direction="column" ml="4" justify="center">
-        <Text fontWeight="medium">Nome da Startup</Text>
+        <Text fontWeight="medium">{business.name}</Text>
         <Text fontSize="sm" color="gray.600">
-          Setor
+          {business.segment}
         </Text>
       </Flex>
     </Flex>

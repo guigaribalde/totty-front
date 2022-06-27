@@ -1,8 +1,13 @@
 import { Box, Divider, Flex, Text } from '@chakra-ui/react'
 import React from 'react'
+import { ShortBusinessInterface } from 'src/interfaces/business'
 import { BussinessCard } from './BussinessCard'
 
-export const TopBussinessSection = () => {
+export const TopBussinessSection = ({
+  businesses,
+}: {
+  businesses: ShortBusinessInterface[]
+}) => {
   return (
     <Flex
       mx="auto"
@@ -23,10 +28,9 @@ export const TopBussinessSection = () => {
       </Text>
       <Box overflowX="auto" w="100">
         <Flex justify="space-between" minW="1100px">
-          <BussinessCard />
-          <BussinessCard />
-          <BussinessCard />
-          <BussinessCard />
+          {businesses.map((business) => (
+            <BussinessCard key={business.id} business={business} />
+          ))}
         </Flex>
       </Box>
     </Flex>
