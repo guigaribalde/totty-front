@@ -1,7 +1,7 @@
 import { Box, Flex, HStack, Icon, Text } from '@chakra-ui/react'
 import { FiMoreVertical } from 'react-icons/fi'
-import BusinessLogoAndModel from '@components/BusinessLogoAndModel'
-import BusinessStats from '@components/BusinessStats'
+import BusinessLogoAndModel from '@components/BusinessProfile/Header/BusinessLogoAndModel'
+import BusinessStats from '@components/BusinessProfile/Header/BusinessStats'
 import { useBusiness } from '@hooks/useBusiness'
 
 export default function BusinessHeader() {
@@ -52,7 +52,7 @@ export default function BusinessHeader() {
         <Text color="gray.600">{business.segment}</Text>
       </Box>
       <BusinessStats />
-      <Box w="100" maxW="600px" margin="auto" mt="5" pl="6" pr="3">
+      <Box w="100" maxW="1000px" margin="auto" mt="5" px="3">
         <Text color="gray.600">{business.description}</Text>
       </Box>
     </>

@@ -1,9 +1,15 @@
-import { useState } from 'react'
 import { Box, HStack, Icon } from '@chakra-ui/react'
 import { FiDownload, FiGrid, FiTrendingUp } from 'react-icons/fi'
 
-export default function BusinessProfileNav() {
-  const [active, setActive] = useState(0)
+interface BusinessProfileNavProps {
+  active: number
+  setActive: (index: number) => void
+}
+
+export default function BusinessProfileNav({
+  active,
+  setActive,
+}: BusinessProfileNavProps) {
   return (
     <>
       <HStack gap="12" justify="center">
