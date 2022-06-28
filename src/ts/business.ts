@@ -1,3 +1,5 @@
+import { Person } from './person'
+
 export interface ShortBusinessInterface {
   id: number
   name: string
@@ -33,6 +35,11 @@ export interface BusinessInterface {
   valuation: {
     min: number
     max: number
+  }
+  people: {
+    founders: Person[]
+    investors: Person[]
+    executives: Person[]
   }
   founded_at: string
   growth: number
