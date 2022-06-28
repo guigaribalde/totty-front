@@ -1,0 +1,7 @@
+html {
+  overflow: overlay;
+}
+* {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+}
