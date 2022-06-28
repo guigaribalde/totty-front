@@ -26,6 +26,7 @@ const Home = ({ businesses }: { businesses: ShortBusinessInterface[] }) => {
       <IntroCTASection />
       <TopBussinessSection businesses={businesses} />
       <SellMoreCard />
+      <Box mt="36" />
     </Box>
   )
 }

@@ -5,7 +5,6 @@ export const Footer = () => {
     <Flex
       bgColor="gray.700"
       w="100"
-      mt="36"
       p="12"
       justify="center"
       align="center"
