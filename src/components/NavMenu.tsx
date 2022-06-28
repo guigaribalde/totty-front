@@ -114,30 +114,27 @@ export const NavMenu = () => {
               </Text>
             </HStack>
           </Flex>
-          <Flex
-            direction="row"
-            align="center"
-            display={{ base: 'none', lg: 'flex' }}
-          >
-            <Text
-              as="a"
-              cursor="pointer"
-              fontWeight="semibold"
-              color="brand.500"
-              mr="7"
-              _hover={{ color: 'brand.600' }}
+          <Box>
+            <Flex
+              direction="row"
+              align="center"
+              display={{ base: 'none', lg: 'flex' }}
             >
-              criar conta
-            </Text>
-            <Button>Entrar</Button>
-          </Flex>
-          <Box p="2" onClick={onOpen}>
-            <Icon
-              as={FiMenu}
-              display={{ base: 'flex', lg: 'none' }}
-              fontSize="20px"
-              color="brand.500"
-            />
+              <Text
+                as="a"
+                cursor="pointer"
+                fontWeight="semibold"
+                color="brand.500"
+                mr="7"
+                _hover={{ color: 'brand.600' }}
+              >
+                criar conta
+              </Text>
+              <Button>Entrar</Button>
+            </Flex>
+            <Box p="2" onClick={onOpen} display={{ base: 'flex', lg: 'none' }}>
+              <Icon as={FiMenu} fontSize="20px" color="brand.500" />
+            </Box>
           </Box>
         </Flex>
       </Box>
