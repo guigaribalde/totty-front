@@ -7,6 +7,7 @@ import { TopBussinessSection } from '@components/TopBussinessSection'
 import { SellMoreCard } from '@components/SellMoreCard'
 import { IntroCTASection } from '@components/IntroCTASection'
 import { ShortBusinessInterface } from '@ts/business'
+import Head from 'next/head'
 
 export const getStaticProps: GetStaticProps = async () => {
   const { data: businesses }: { data: ShortBusinessInterface[] } =
@@ -21,13 +22,18 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const Home = ({ businesses }: { businesses: ShortBusinessInterface[] }) => {
   return (
-    <Box>
-      <HeroSection />
-      <IntroCTASection />
-      <TopBussinessSection businesses={businesses} />
-      <SellMoreCard />
-      <Box mt="36" />
-    </Box>
+    <>
+      <Head>
+        <title>Totty | Perfil digital para Startups</title>
+      </Head>
+      <Box>
+        <HeroSection />
+        <IntroCTASection />
+        <TopBussinessSection businesses={businesses} />
+        <SellMoreCard />
+        <Box mt="36" />
+      </Box>
+    </>
   )
 }
 
