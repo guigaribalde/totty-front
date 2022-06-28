@@ -4,11 +4,13 @@ export const Footer = () => {
   return (
     <Flex
       bgColor="gray.700"
-      w="100"
+      w="100%"
       p="12"
       justify="center"
       align="center"
       direction="column"
+      position="absolute"
+      bottom="0"
     >
       <Text color="white">Sediado em</Text>
       <svg
