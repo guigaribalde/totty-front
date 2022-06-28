@@ -58,37 +58,45 @@
         "min": 100,
         "max": 200
       },
-      "founded_at": "01/01/2000",
-      "growth": 3.4,
-      "model": "B2B"
-    },
-    {
-      "id": 2,
-      "name": "Nafsio",
-      "segment": "Saúde",
-      "slug": "Nafsio",
-      "logo": null,
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisi eu aliquam consectetur, nisl nisi consectetur nisi, euismod eget nisi nisi euismod nisi. Nullam euismod, nisi eu aliquam consectetur, nisl nisi consectetur nisi, euismod eget nisi nisi euismod nisi. Nullam euismod, nisi eu aliquam consectetur, nisl nisi consectetur nisi, euismod eget nisi nisi euismod nisi. Nullam euismod, nisi eu aliquam consectetur, nisl nisi consectetur nisi, euismod eget nisi nisi euismod nisi. Nullam euismod, nisi eu aliquam consectetur, nisl nisi consectetur nisi, euismod eget nisi nisi euismod nisi. Nullam euismod, nisi eu aliquam consectetur, nisl nisi consectetur nisi, euismod eget nisi nisi euismod nisi. Nullam euismod, nisi eu aliquam consectetur, nisl nisi consectetur nisi, euismod eget nisi nisi euismod nisi. Nullam euismod, nisi eu aliquam consectetur, nisl nisi consectetur nisi, euismod eget nisi nisi euismod nisi. Nullam euismod, nisi eu aliquam consectetur, nisl nisi consectetur nisi, euismod eget nisi nisi euismod nisi. Nullam euismod, nisi eu aliquam consectetur, nisl nisi consectetur nisi, euismod eget nisi nisi euismod nisi. Nullam e",
-      "address": "Rua dos Bobos, 0",
-      "contact": {
-        "phone": "123456789",
-        "email": "email@example.com"
-      },
-      "social": {
-        "website": "http://www.example.com",
-        "facebook": "http://www.facebook.com",
-        "twitter": "http://www.twitter.com",
-        "instagram": "http://www.instagram.com",
-        "youtube": "http://www.youtube.com",
-        "linkedin": "http://www.linkedin.com"
-      },
-      "employees": {
-        "min": 100,
-        "max": 200
-      },
-      "valuation": {
-        "min": 100,
-        "max": 200
+      "people": {
+        "founders": [
+          {
+            "name": "Guilherme Silva",
+            "linkedin": "http://www.linkedin.com"
+          },
+          {
+            "name": "João Silva",
+            "linkedin": "http://www.linkedin.com"
+          },
+          {
+            "name": "Leonardo Barbosa",
+            "linkedin": "http://www.linkedin.com"
+          }
+        ],
+        "investors": [
+          {
+            "name": "Ernani Alves",
+            "linkedin": "http://www.linkedin.com"
+          },
+          {
+            "name": "Carlos Pompermaier",
+            "linkedin": "http://www.linkedin.com"
+          },
+          {
+            "name": "José Almeida",
+            "linkedin": "http://www.linkedin.com"
+          }
+        ],
+        "executives": [
+          {
+            "name": "Sophia Furini",
+            "linkedin": "http://www.linkedin.com"
+          },
+          {
+            "name": "Leonardo Ramos",
+            "linkedin": "http://www.linkedin.com"
+          }
+        ]
       },
       "founded_at": "01/01/2000",
       "growth": 3.4,
