@@ -34,25 +34,65 @@
       "id": 1,
       "name": "Creatus",
       "segment": "Tecnologia",
-      "slug": "Creatus"
+      "slug": "Creatus",
+      "logo": "https://lh4.googleusercontent.com/-fp0jtrGtaoY/AAAAAAAAAAI/AAAAAAAAAAA/bsWagg4awvM/s88-p-k-no-ns-nd/photo.jpg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisi eu aliquam consectetur, nisl nisi consectetur nisi, euismod eget nisi nisi euismod nisi. Nullam euismod, nisi eu aliquam consectetur, nisl nisi consectetur nisi, euismod eget nisi nisi euismod nisi.",
+      "address": "Rua dos Bobos, 0",
+      "contact": {
+        "phone": "123456789",
+        "email": "email@example.com"
+      },
+      "social": {
+        "website": "http://www.example.com",
+        "facebook": "http://www.facebook.com",
+        "twitter": "http://www.twitter.com",
+        "instagram": "http://www.instagram.com",
+        "youtube": "http://www.youtube.com",
+        "linkedin": "http://www.linkedin.com"
+      },
+      "employees": {
+        "min": 100,
+        "max": 200
+      },
+      "valuation": {
+        "min": 100,
+        "max": 200
+      },
+      "founded_at": "01/01/2000",
+      "growth": 3.4,
+      "model": "B2B"
     },
     {
       "id": 2,
       "name": "Nafsio",
       "segment": "Saúde",
-      "slug": "Nafsio"
-    },
-    {
-      "id": 3,
-      "name": "Contem.info",
-      "segment": "Fotos",
-      "slug": "ContemInfo"
-    },
-    {
-      "id": 4,
-      "name": "Alma Castelhana",
-      "segment": "Comida",
-      "slug": "AlmaCastelhana"
+      "slug": "Nafsio",
+      "logo": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisi eu aliquam consectetur, nisl nisi consectetur nisi, euismod eget nisi nisi euismod nisi. Nullam euismod, nisi eu aliquam consectetur, nisl nisi consectetur nisi, euismod eget nisi nisi euismod nisi. Nullam euismod, nisi eu aliquam consectetur, nisl nisi consectetur nisi, euismod eget nisi nisi euismod nisi. Nullam euismod, nisi eu aliquam consectetur, nisl nisi consectetur nisi, euismod eget nisi nisi euismod nisi. Nullam euismod, nisi eu aliquam consectetur, nisl nisi consectetur nisi, euismod eget nisi nisi euismod nisi. Nullam euismod, nisi eu aliquam consectetur, nisl nisi consectetur nisi, euismod eget nisi nisi euismod nisi. Nullam euismod, nisi eu aliquam consectetur, nisl nisi consectetur nisi, euismod eget nisi nisi euismod nisi. Nullam euismod, nisi eu aliquam consectetur, nisl nisi consectetur nisi, euismod eget nisi nisi euismod nisi. Nullam euismod, nisi eu aliquam consectetur, nisl nisi consectetur nisi, euismod eget nisi nisi euismod nisi. Nullam euismod, nisi eu aliquam consectetur, nisl nisi consectetur nisi, euismod eget nisi nisi euismod nisi. Nullam e",
+      "address": "Rua dos Bobos, 0",
+      "contact": {
+        "phone": "123456789",
+        "email": "email@example.com"
+      },
+      "social": {
+        "website": "http://www.example.com",
+        "facebook": "http://www.facebook.com",
+        "twitter": "http://www.twitter.com",
+        "instagram": "http://www.instagram.com",
+        "youtube": "http://www.youtube.com",
+        "linkedin": "http://www.linkedin.com"
+      },
+      "employees": {
+        "min": 100,
+        "max": 200
+      },
+      "valuation": {
+        "min": 100,
+        "max": 200
+      },
+      "founded_at": "01/01/2000",
+      "growth": 3.4,
+      "model": "B2B"
     }
   ]
 }
