@@ -1,4 +1,4 @@
-import { GetServerSideProps } from 'next'
+import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
 import axios from 'axios'
 
@@ -12,23 +12,58 @@ import json from 'src/db/index.json'
 
 const env = process.env.NODE_ENV
 
-export const getServerSideProps: GetServerSideProps = async (props) => {
-  const slug = props.query.slug as string
+interface StaticPathsProps {
+  params: {
+    slug: string
+  }
+}
 
-  const business = []
+export const getStaticPaths: GetStaticPaths = async () => {
+  const paths: StaticPathsProps[] = []
+  if (env === 'development') {
+    const { data: b }: { data: BusinessInterface[] } = await axios.get(
+      `http://localhost:3004/business`
+    )
+    b.forEach((b) => {
+      paths.push({
+        params: {
+          slug: b.slug,
+        },
+      })
+    })
+  } else if (env === 'production') {
+    json.business.forEach((b) => {
+      paths.push({
+        params: {
+          slug: b.slug,
+        },
+      })
+    })
+  }
 
+  return {
+    paths,
+    fallback: false,
+  }
+}
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  const { slug } = context.params as { slug: string }
+  const business: BusinessInterface[] = []
   if (env === 'development') {
     const { data: b }: { data: BusinessInterface[] } = await axios.get(
       `http://localhost:3004/business?slug=${slug}`
     )
-    business.push(b[0])
+    business.push(...b)
   } else if (env === 'production') {
-    const b = json.business.find((b) => b.slug === slug) as BusinessInterface
-    business.push(b)
+    business.push(
+      json.business.find((b) => b.slug === slug) as BusinessInterface
+    )
   }
-
   return {
-    props: { business: business[0] },
+    props: {
+      business: business[0],
+    },
   }
 }
 
