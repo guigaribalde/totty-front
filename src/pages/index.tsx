@@ -1,6 +1,6 @@
 import { Box } from '@chakra-ui/react'
 import type { GetStaticProps } from 'next'
-// import axios from 'axios'
+import axios from 'axios'
 
 import { HeroSection } from '@components/HeroSection'
 import { TopBussinessSection } from '@components/TopBussinessSection'
@@ -11,10 +11,18 @@ import Head from 'next/head'
 
 import json from 'src/db/index.json'
 
+const env = process.env.NODE_ENV
+
 export const getStaticProps: GetStaticProps = async () => {
-  // const { data: businesses }: { data: ShortBusinessInterface[] } =
-  //   await axios.get('http://localhost:3004/top_business')
-  const businesses = json.top_business
+  const businesses = []
+  if (env === 'development') {
+    const { data: b }: { data: ShortBusinessInterface[] } = await axios.get(
+      'http://localhost:3004/top_business'
+    )
+    businesses.push(...b)
+  } else if (env === 'production') {
+    businesses.push(...json.top_business)
+  }
   return {
     props: {
       businesses,
