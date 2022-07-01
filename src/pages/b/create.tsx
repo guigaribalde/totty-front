@@ -2,9 +2,9 @@ import { business } from '@lib/business'
 
 export const getServerSideProps = async () => {
   business.create({
-    name: 'Nafisio',
+    name: 'Creatus',
     segment: 'Tecnologia',
-    slug: 'nafisio',
+    slug: 'creatus',
     logo: 'https://lh4.googleusercontent.com/-fp0jtrGtaoY/AAAAAAAAAAI/AAAAAAAAAAA/bsWagg4awvM/s88-p-k-no-ns-nd/photo.jpg',
     description:
       'A empresa Creatus é uma empresa de tecnologia que tem como objetivo principal a criação de soluções para a indústria de automação e robótica.',
