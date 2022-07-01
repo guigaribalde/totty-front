@@ -1,7 +1,7 @@
 import { business } from '@lib/business'
 
 export const getServerSideProps = async () => {
-  business.create({
+  await business.create({
     name: 'Creatus',
     segment: 'Tecnologia',
     slug: 'creatus',
