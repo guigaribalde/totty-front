@@ -7,7 +7,7 @@ export default function BusinessLogoAndModel() {
     <Box position="relative">
       <Avatar
         name={business.name}
-        src={business.logo}
+        src={business?.logo || undefined}
         border="1px solid #E2E8F0"
         size="2xl"
         bgColor="gray.100"
