@@ -1,15 +1,14 @@
 import { createContext, useState } from 'react'
-
-import { BusinessInterface } from '@ts/business'
+import { BusinessExtended } from '@ts/business'
 
 export interface BusinessContextInterface {
-  business: BusinessInterface
-  setBusiness: (business: BusinessInterface) => void
+  business: BusinessExtended
+  setBusiness: (business: BusinessExtended) => void
 }
 
 interface BusinessContextProviderInterface {
   children: React.ReactNode
-  business: BusinessInterface
+  business: BusinessExtended
 }
 
 const BusinessContext = createContext<BusinessContextInterface | null>(null)
@@ -18,7 +17,7 @@ export const BusinessProvider = ({
   children,
   business: b,
 }: BusinessContextProviderInterface) => {
-  const [business, setBusiness] = useState<BusinessInterface>(b)
+  const [business, setBusiness] = useState<BusinessExtended>(b)
   return (
     <BusinessContext.Provider value={{ business, setBusiness }}>
       {children}

@@ -1,17 +1,13 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
-import axios from 'axios'
 
 import { Box } from '@chakra-ui/react'
 import Header from '@components/BusinessProfile/Header'
 import Nav from '@components/BusinessProfile/Nav'
-import { BusinessInterface } from '@ts/business'
 import { BusinessProvider } from '@context/BusinessContext'
 
-import json from 'src/db/index.json'
-
-const env = process.env.NODE_ENV
-
+import { business } from '@lib/business'
+import { BusinessExtended } from '@ts/business'
 interface StaticPathsProps {
   params: {
     slug: string
@@ -19,27 +15,19 @@ interface StaticPathsProps {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths: StaticPathsProps[] = []
-  if (env === 'development') {
-    const { data: b }: { data: BusinessInterface[] } = await axios.get(
-      `http://localhost:3004/business`
-    )
-    b.forEach((b) => {
-      paths.push({
-        params: {
-          slug: b.slug,
-        },
-      })
-    })
-  } else if (env === 'production') {
-    json.business.forEach((b) => {
-      paths.push({
-        params: {
-          slug: b.slug,
-        },
-      })
-    })
+  const slugs = await business.get({ select: { slug: true } })
+  if (!slugs) {
+    return {
+      paths: [],
+      fallback: false,
+    }
   }
+
+  const paths: StaticPathsProps[] = slugs.map((b) => ({
+    params: {
+      slug: b.slug,
+    },
+  }))
 
   return {
     paths,
@@ -49,25 +37,40 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const { slug } = context.params as { slug: string }
-  const business: BusinessInterface[] = []
-  if (env === 'development') {
-    const { data: b }: { data: BusinessInterface[] } = await axios.get(
-      `http://localhost:3004/business?slug=${slug}`
-    )
-    business.push(...b)
-  } else if (env === 'production') {
-    business.push(
-      json.business.find((b) => b.slug === slug) as BusinessInterface
-    )
+  const b = (await business.get({
+    where: { slug },
+    include: {
+      contact: true,
+      employees: true,
+      people: {
+        include: {
+          executives: true,
+          founders: true,
+          investors: true,
+        },
+      },
+      social: true,
+    },
+  })) as BusinessExtended[]
+
+  if (!b) {
+    return {
+      props: {
+        business: null,
+      },
+    }
   }
+
   return {
     props: {
-      business: business[0],
+      business: b[0],
     },
+    // revalidate: 60 * 60 * 24 * 30, // 1 month
+    revalidate: 60,
   }
 }
 
-export default function Profile({ business }: { business: BusinessInterface }) {
+export default function Profile({ business }: { business: BusinessExtended }) {
   return (
     <>
       <Head>

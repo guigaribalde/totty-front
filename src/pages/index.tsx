@@ -1,28 +1,17 @@
 import { Box } from '@chakra-ui/react'
 import type { GetStaticProps } from 'next'
-import axios from 'axios'
 
 import { HeroSection } from '@components/HeroSection'
 import { TopBussinessSection } from '@components/TopBussinessSection'
 import { SellMoreCard } from '@components/SellMoreCard'
 import { IntroCTASection } from '@components/IntroCTASection'
-import { ShortBusinessInterface } from '@ts/business'
 import Head from 'next/head'
 
-import json from 'src/db/index.json'
-
-const env = process.env.NODE_ENV
+import { business } from '@lib/business'
+import { Business } from '@prisma/client'
 
 export const getStaticProps: GetStaticProps = async () => {
-  const businesses = []
-  if (env === 'development') {
-    const { data: b }: { data: ShortBusinessInterface[] } = await axios.get(
-      'http://localhost:3004/top_business'
-    )
-    businesses.push(...b)
-  } else if (env === 'production') {
-    businesses.push(...json.top_business)
-  }
+  const businesses = await business.get({})
   return {
     props: {
       businesses,
@@ -31,7 +20,7 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-const Home = ({ businesses }: { businesses: ShortBusinessInterface[] }) => {
+const Home = ({ businesses }: { businesses: Business[] }) => {
   return (
     <>
       <Head>

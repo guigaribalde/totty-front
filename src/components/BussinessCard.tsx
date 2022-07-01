@@ -1,14 +1,10 @@
 import { Avatar, Flex, Text } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 
-import { ShortBusinessInterface } from '@ts/business'
 import { nameShortner } from '@utils/index'
+import { Business } from '@prisma/client'
 
-export const BussinessCard = ({
-  business,
-}: {
-  business: ShortBusinessInterface
-}) => {
+export const BussinessCard = ({ business }: { business: Business }) => {
   const router = useRouter()
   return (
     <Flex
@@ -32,7 +28,7 @@ export const BussinessCard = ({
     >
       <Avatar
         name={business.name}
-        src={business.logo}
+        src={business.logo || undefined}
         bgColor="gray.100"
         color="gray.400"
         border="1px solid #E2E8F0"

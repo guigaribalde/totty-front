@@ -1,12 +1,12 @@
 import { Box, Divider, Flex, Text } from '@chakra-ui/react'
 
-import { ShortBusinessInterface } from '@ts/business'
 import { BussinessCard } from '@components/BussinessCard'
+import { Business } from '@prisma/client'
 
 export const TopBussinessSection = ({
   businesses,
 }: {
-  businesses: ShortBusinessInterface[]
+  businesses: Business[]
 }) => {
   return (
     <Flex
