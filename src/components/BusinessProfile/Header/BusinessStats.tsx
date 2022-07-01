@@ -3,6 +3,7 @@ import { useBusiness } from '@hooks/useBusiness'
 
 export default function BusinessStats() {
   const { business } = useBusiness()
+
   return (
     <HStack gap="4" justify="center" mt="5">
       <Flex
@@ -13,7 +14,7 @@ export default function BusinessStats() {
         }}
       >
         <Text fontWeight="semibold" mr="2">
-          {business.employees.min} - {business.employees.max}
+          {business.employees?.min} - {business.employees?.max}
         </Text>
         <Text color="gray.500">funcionários</Text>
       </Flex>
@@ -28,7 +29,7 @@ export default function BusinessStats() {
           {Intl.NumberFormat('pt-BR', {
             style: 'currency',
             currency: 'BRL',
-          }).format(business.valuation.min)}
+          }).format(business?.valuation || 0)}
         </Text>
         <Text color="gray.500">valuation</Text>
       </Flex>

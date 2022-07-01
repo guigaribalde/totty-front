@@ -1,0 +1,90 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Business {
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  segment     String
+  slug        String
+  logo        String?
+  description String?
+  address     String?
+  contact     Contact?  @relation(fields: [contactId], references: [id])
+  social      Social?   @relation(fields: [socialId], references: [id])
+  employees   MinMax?   @relation(fields: [minMaxId], references: [id])
+  valuation   Int?
+  people      People   @relation(fields: [peopleId], references: [id])
+  founded_at  String?
+  growth      Float?
+  model       String?
+  contactId   String?
+  socialId    String?
+  minMaxId    String?
+  peopleId    String
+}
+
+model Contact {
+  id       String     @id @default(auto()) @map("_id") @db.ObjectId
+  email    String
+  phone    String
+  Business Business[]
+}
+
+model Social {
+  id        String     @id @default(auto()) @map("_id") @db.ObjectId
+  website   String?
+  facebook  String?
+  twitter   String?
+  instagram String?
+  youtube   String?
+  linkedin  String?
+  Business  Business[]
+}
+
+model MinMax {
+  id       String     @id @default(auto()) @map("_id") @db.ObjectId
+  min      Int
+  max      Int
+  Business Business[]
+}
+
+model Founder {
+  id       String  @id @default(auto()) @map("_id") @db.ObjectId
+  name     String
+  linkedin String
+  People   People @relation(fields: [peopleId], references: [id])
+  peopleId String
+}
+
+model Investor {
+  id       String  @id @default(auto()) @map("_id") @db.ObjectId
+  name     String
+  linkedin String
+  People   People @relation(fields: [peopleId], references: [id])
+  peopleId String
+}
+
+model Executive {
+  id       String  @id @default(auto()) @map("_id") @db.ObjectId
+  name     String
+  linkedin String
+  People   People @relation(fields: [peopleId], references: [id])
+  peopleId String
+}
+
+model People {
+  id         String      @id @default(auto()) @map("_id") @db.ObjectId
+  founders   Founder[]
+  investors  Investor[]
+  executives Executive[]
+  Business   Business[]
+}

@@ -32,7 +32,7 @@ export default function BusinessHeader() {
         <Text fontSize="3xl" fontWeight="semibold">
           {business.name}
         </Text>
-        {business?.series && (
+        {/* {business? && (
           <Flex
             ml="3"
             align="center"
@@ -46,7 +46,7 @@ export default function BusinessHeader() {
               A
             </Text>
           </Flex>
-        )}
+        )} */}
       </Flex>
       <Box textAlign="center">
         <Text color="gray.600">{business.segment}</Text>

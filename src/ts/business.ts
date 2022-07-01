@@ -1,48 +1,16 @@
-import { Person } from './person'
+import { Prisma } from '@prisma/client'
 
-export interface ShortBusinessInterface {
-  id: number
-  name: string
-  segment: string
-  slug: string
-  logo: string
-}
-
-export interface BusinessInterface {
-  id: number
-  name: string
-  segment: string
-  slug: string
-  logo: string
-  description: string
-  address: string
-  contact: {
-    phone: string
-    email: string
+export type BusinessExtended = Prisma.BusinessGetPayload<{
+  include: {
+    people: {
+      include: {
+        executives: true
+        founders: true
+        investors: true
+      }
+    }
+    employees: true
+    social: true
+    contact: true
   }
-  social: {
-    website: string
-    facebook: string
-    twitter: string
-    instagram: string
-    youtube: string
-    linkedin: string
-  }
-  employees: {
-    min: number
-    max: number
-  }
-  valuation: {
-    min: number
-    max: number
-  }
-  people: {
-    founders: Person[]
-    investors: Person[]
-    executives: Person[]
-  }
-  founded_at: string
-  growth: number
-  model: string
-  series?: string
-}
+}>

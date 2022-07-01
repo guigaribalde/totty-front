@@ -19,6 +19,7 @@
       "@components/*": ["src/components/*"],
       "@assets/*": ["src/assets/*"],
       "@themes/*": ["src/themes/*"],
+      "@lib/*": ["src/lib/*"],
       "@context/*": ["src/utils/context/*"],
       "@hooks/*": ["src/utils/hooks/*"],
       "@utils/*": ["src/utils/*"],

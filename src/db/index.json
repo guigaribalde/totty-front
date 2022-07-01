@@ -54,10 +54,7 @@
         "min": 100,
         "max": 200
       },
-      "valuation": {
-        "min": 100,
-        "max": 200
-      },
+      "valuation": 100,
       "people": {
         "founders": [
           {
