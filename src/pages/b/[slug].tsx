@@ -66,7 +66,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
       business: b[0],
     },
     // revalidate: 60 * 60 * 24 * 30, // 1 month
-    revalidate: 60,
+    revalidate: 30,
   }
 }
 
