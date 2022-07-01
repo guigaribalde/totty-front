@@ -31,7 +31,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return {
     paths,
-    fallback: false,
+    fallback: 'blocking',
   }
 }
 
@@ -65,8 +65,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     props: {
       business: b[0],
     },
-    // revalidate: 60 * 60 * 24 * 30, // 1 month
-    revalidate: 30,
+    revalidate: 60 * 60 * 24, // 1 day
   }
 }
 
