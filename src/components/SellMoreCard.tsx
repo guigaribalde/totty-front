@@ -20,7 +20,7 @@ export const SellMoreCard = () => {
         direction="column"
         justify="center"
         align="center"
-        bgColor="#F4EDF7"
+        bgColor="brand.50"
         borderRadius={{ base: '0', md: '10' }}
       >
         <Text fontWeight="extrabold" fontSize="6xl" mb="5">
