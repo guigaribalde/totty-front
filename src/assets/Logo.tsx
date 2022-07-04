@@ -3,8 +3,7 @@ import { useRouter } from 'next/router'
 
 const Logo = () => {
   const router = useRouter()
-  const handleClick = (e: React.MouseEvent<HTMLElement>) => {
-    e.preventDefault()
+  const handleClick = () => {
     router.push('/')
   }
 
