@@ -1,4 +1,4 @@
-import { Box, Flex, Text } from '@chakra-ui/react'
+import { Box, Divider, Flex, Text } from '@chakra-ui/react'
 
 import Logo from '@assets/Logo'
 import { Input } from '@components/Input'
@@ -86,27 +86,31 @@ export default function Signin() {
           >
             Registrar-se de graça
           </Text>
-          <Text fontSize="sm" my="4" textAlign="center" color="gray.500">
-            - ou -
-          </Text>
-
-          <Button onClick={facebookSignIn} colorScheme="facebook" w="100%">
-            <FaFacebook />
-            <Text fontWeight="medium" ml="3">
-              Continuar
+          <Flex align="center" my="4">
+            <Divider />
+            <Text fontSize="sm" p="2" textAlign="center" color="gray.400">
+              Ou
             </Text>
-          </Button>
-          <Button
-            onClick={linkedinSignIn}
-            colorScheme="linkedin"
-            w="100%"
-            mt="1"
-          >
-            <FaLinkedin />
-            <Text fontWeight="medium" ml="3">
-              Continuar
-            </Text>
-          </Button>
+            <Divider />
+          </Flex>
+          <Flex gap="2">
+            <Button
+              onClick={facebookSignIn}
+              colorScheme="gray"
+              w="100%"
+              variant="outline"
+            >
+              <FaFacebook />
+            </Button>
+            <Button
+              onClick={linkedinSignIn}
+              colorScheme="gray"
+              w="100%"
+              variant="outline"
+            >
+              <FaLinkedin />
+            </Button>
+          </Flex>
         </Box>
       </Flex>
     </Flex>
