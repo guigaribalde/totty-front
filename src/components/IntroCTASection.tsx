@@ -1,8 +1,13 @@
 import { Flex, Text } from '@chakra-ui/react'
 
 import { Button } from '@components/Button'
+import { useRouter } from 'next/router'
 
 export const IntroCTASection = () => {
+  const router = useRouter()
+  function handleSignUp() {
+    router.push('/account/signup')
+  }
   return (
     <Flex
       mx="auto"
@@ -20,7 +25,9 @@ export const IntroCTASection = () => {
         pode apresentar sua startup de uma maneira mais rápida e fácil. Deixe
         seu pitch falar por você!
       </Text>
-      <Button mt="5">CRIAR CONTA AGORA</Button>
+      <Button mt="5" onClick={handleSignUp}>
+        CRIAR CONTA AGORA
+      </Button>
     </Flex>
   )
 }
