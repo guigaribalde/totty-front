@@ -17,6 +17,11 @@ export default function Signin() {
   function facebookSignIn() {
     signIn('facebook', { callbackUrl: '/' })
   }
+
+  function linkedinSignIn() {
+    signIn('linkedin', { callbackUrl: '/' })
+  }
+
   return (
     <Flex
       h="100vh"
@@ -91,7 +96,12 @@ export default function Signin() {
               Continuar
             </Text>
           </Button>
-          <Button colorScheme="linkedin" w="100%" mt="1">
+          <Button
+            onClick={linkedinSignIn}
+            colorScheme="linkedin"
+            w="100%"
+            mt="1"
+          >
             <FaLinkedin />
             <Text fontWeight="medium" ml="3">
               Continuar
