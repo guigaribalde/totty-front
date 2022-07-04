@@ -20,15 +20,25 @@ import { FiMenu } from 'react-icons/fi'
 
 import Logo from '@assets/Logo'
 import { Button } from '@components/Button'
+import { useRouter } from 'next/router'
 
 const MAX_SCROLL_HEIGHT = 10
 
 export const NavMenu = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [scrollPosition, setScrollPosition] = useState<number>(0)
+  const router = useRouter()
+
   const handleScroll = () => {
     const position = window.pageYOffset
     setScrollPosition(position)
+  }
+  const handleSignIn = () => {
+    router.push('/account/signin')
+  }
+
+  const handleSignUp = () => {
+    router.push('/account/signup')
   }
 
   useEffect(() => {
@@ -53,12 +63,18 @@ export const NavMenu = () => {
                   colorScheme="gray"
                   variant="outline"
                   color="gray.500"
+                  onClick={handleSignIn}
                 >
                   Entrar
                 </ChakraButton>
               </Box>
               <Box w="100%">
-                <ChakraButton w="100%" color="white" colorScheme="brand">
+                <ChakraButton
+                  w="100%"
+                  color="white"
+                  colorScheme="brand"
+                  onClick={handleSignUp}
+                >
                   Criar Conta
                 </ChakraButton>
               </Box>
@@ -127,10 +143,11 @@ export const NavMenu = () => {
                 color="brand.500"
                 mr="7"
                 _hover={{ color: 'brand.600' }}
+                onClick={handleSignUp}
               >
                 criar conta
               </Text>
-              <Button>Entrar</Button>
+              <Button onClick={handleSignIn}>Entrar</Button>
             </Flex>
             <Box p="2" onClick={onOpen} display={{ base: 'flex', lg: 'none' }}>
               <Icon as={FiMenu} fontSize="20px" color="brand.500" />

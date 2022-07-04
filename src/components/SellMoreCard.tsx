@@ -2,8 +2,13 @@ import { Flex, Icon, Text } from '@chakra-ui/react'
 import { FiChevronRight } from 'react-icons/fi'
 
 import { Button } from '@components/Button'
+import { useRouter } from 'next/router'
 
 export const SellMoreCard = () => {
+  const router = useRouter()
+  function handleSignUp() {
+    router.push('/account/signup')
+  }
   return (
     <Flex mt="36" justify="center" align="center">
       <Flex
@@ -26,16 +31,17 @@ export const SellMoreCard = () => {
           em eventos e campanhas de maneira fácil e aumente suas vendas no
           Account Based Marketing (ABM)
         </Text>
-        <Button>AUMENTAR VENDAS ABM</Button>
+        <Button onClick={handleSignUp}>AUMENTAR VENDAS ABM</Button>
         <Flex
           mt="5"
           align="center"
           textAlign="center"
-          color="brand.500"
+          color="brand.400"
           as="a"
           cursor="pointer"
-          _hover={{ color: 'brand.700' }}
+          _hover={{ color: 'brand.600' }}
           transition="all 0.2s ease"
+          onClick={handleSignUp}
         >
           <Text fontWeight="semibold">CRIAR CONTA GRÁTIS</Text>
           <Icon as={FiChevronRight} ml="1" fontSize="18" />
