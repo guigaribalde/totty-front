@@ -136,6 +136,7 @@ export const NavMenu = () => {
               direction="row"
               align="center"
               display={{ base: 'none', lg: 'flex' }}
+              minH="40px"
             >
               {userData ? (
                 <>
@@ -158,8 +159,8 @@ export const NavMenu = () => {
                     </Text>
                   </Flex>
                   <Avatar
-                    name={userData.user?.name || ''}
-                    src={userData.user?.image || undefined}
+                    name={userData?.user?.name || ''}
+                    src={userData?.user?.image || undefined}
                     size="sm"
                   />
                 </>
