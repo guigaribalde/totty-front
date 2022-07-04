@@ -1,5 +1,3 @@
-//TODO: logged in and logged out;
-
 import React, { useEffect, useState } from 'react'
 import {
   Box,
@@ -15,12 +13,14 @@ import {
   useDisclosure,
   Button as ChakraButton,
   VStack,
+  Avatar,
 } from '@chakra-ui/react'
-import { FiMenu } from 'react-icons/fi'
+import { FiLogOut, FiMenu } from 'react-icons/fi'
 
 import Logo from '@assets/Logo'
 import { Button } from '@components/Button'
 import { useRouter } from 'next/router'
+import { signOut, useSession } from 'next-auth/react'
 
 const MAX_SCROLL_HEIGHT = 10
 
@@ -28,7 +28,8 @@ export const NavMenu = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [scrollPosition, setScrollPosition] = useState<number>(0)
   const router = useRouter()
-
+  const { data: userData } = useSession()
+  console.log(userData)
   const handleScroll = () => {
     const position = window.pageYOffset
     setScrollPosition(position)
@@ -136,19 +137,50 @@ export const NavMenu = () => {
               align="center"
               display={{ base: 'none', lg: 'flex' }}
             >
-              <Text
-                as="a"
-                cursor="pointer"
-                fontWeight="semibold"
-                color="brand.500"
-                mr="7"
-                _hover={{ color: 'brand.600' }}
-                onClick={handleSignUp}
-              >
-                criar conta
-              </Text>
-              <Button onClick={handleSignIn}>Entrar</Button>
+              {userData ? (
+                <>
+                  <Flex
+                    align="center"
+                    justify="center"
+                    cursor="pointer"
+                    fontWeight="semibold"
+                    color="brand.500"
+                    _hover={{ color: 'brand.600' }}
+                    onClick={() => {
+                      signOut({
+                        callbackUrl: '/',
+                      })
+                    }}
+                  >
+                    <Icon as={FiLogOut} mr="2" />
+                    <Text as="a" mr="7" onClick={handleSignUp}>
+                      sair
+                    </Text>
+                  </Flex>
+                  <Avatar
+                    name={userData.user?.name || ''}
+                    src={userData.user?.image || undefined}
+                    size="sm"
+                  />
+                </>
+              ) : (
+                <>
+                  <Text
+                    as="a"
+                    cursor="pointer"
+                    fontWeight="semibold"
+                    color="brand.500"
+                    mr="7"
+                    _hover={{ color: 'brand.600' }}
+                    onClick={handleSignUp}
+                  >
+                    criar conta
+                  </Text>
+                  <Button onClick={handleSignIn}>Entrar</Button>
+                </>
+              )}
             </Flex>
+
             <Box p="2" onClick={onOpen} display={{ base: 'flex', lg: 'none' }}>
               <Icon as={FiMenu} fontSize="20px" color="brand.500" />
             </Box>

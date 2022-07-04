@@ -5,12 +5,17 @@ import { Input } from '@components/Input'
 import { Button } from '@components/Button'
 import { FaFacebook, FaLinkedin } from 'react-icons/fa'
 import { useRouter } from 'next/router'
+import { signIn } from 'next-auth/react'
 
 // Entrar
 export default function Signin() {
   const router = useRouter()
+
   function handleSignup() {
     router.push('/account/signup')
+  }
+  function facebookSignIn() {
+    signIn('facebook', { callbackUrl: '/' })
   }
   return (
     <Flex
@@ -80,7 +85,7 @@ export default function Signin() {
             - ou -
           </Text>
 
-          <Button colorScheme="facebook" w="100%">
+          <Button onClick={facebookSignIn} colorScheme="facebook" w="100%">
             <FaFacebook />
             <Text fontWeight="medium" ml="3">
               Continuar
