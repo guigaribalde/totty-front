@@ -73,9 +73,7 @@ export default function Profile({ business }: { business: BusinessExtended }) {
   return (
     <>
       <Head>
-        <title>
-          Totty | {business.name} - {business.segment}
-        </title>
+        <title>{`Totty | ${business.name} - ${business.segment}`}</title>
       </Head>
       <Box pt="24">
         <BusinessProvider business={business}>

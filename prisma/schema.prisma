@@ -10,6 +10,17 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model User {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  name       String
+  image      String
+  email      String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @default(now())
+  business   Business? @relation(fields: [businessId], references: [id])
+  businessId String?
+}
+
 model Business {
   id          String    @id @default(auto()) @map("_id") @db.ObjectId
   name        String
@@ -22,7 +33,7 @@ model Business {
   social      Social?   @relation(fields: [socialId], references: [id])
   employees   MinMax?   @relation(fields: [minMaxId], references: [id])
   valuation   Int?
-  people      People   @relation(fields: [peopleId], references: [id])
+  people      People    @relation(fields: [peopleId], references: [id])
   founded_at  String?
   growth      Float?
   model       String?
@@ -30,6 +41,7 @@ model Business {
   socialId    String?
   minMaxId    String?
   peopleId    String
+  Users     User[]
 }
 
 model Contact {
@@ -58,7 +70,7 @@ model MinMax {
 }
 
 model Founder {
-  id       String  @id @default(auto()) @map("_id") @db.ObjectId
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
   name     String
   linkedin String
   People   People @relation(fields: [peopleId], references: [id])
@@ -66,7 +78,7 @@ model Founder {
 }
 
 model Investor {
-  id       String  @id @default(auto()) @map("_id") @db.ObjectId
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
   name     String
   linkedin String
   People   People @relation(fields: [peopleId], references: [id])
@@ -74,7 +86,7 @@ model Investor {
 }
 
 model Executive {
-  id       String  @id @default(auto()) @map("_id") @db.ObjectId
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
   name     String
   linkedin String
   People   People @relation(fields: [peopleId], references: [id])
