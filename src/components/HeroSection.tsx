@@ -1,6 +1,7 @@
 import { Box, Flex, Text } from '@chakra-ui/react'
 
 import { SearchBar } from '@components/SearchBar'
+const env = process.env.NODE_ENV
 
 export const HeroSection = () => {
   return (
@@ -8,7 +9,9 @@ export const HeroSection = () => {
       pt="24"
       bgColor="gray.100"
       w="100%"
-      backgroundImage="/pattern.svg"
+      backgroundImage={
+        env === 'development' ? '/dev_pattern.svg' : '/pattern.svg'
+      }
       backgroundPosition="center top"
     >
       <Flex
