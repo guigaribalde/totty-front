@@ -1,3 +1,5 @@
+![image](https://user-images.githubusercontent.com/88388850/182261726-9b5b8993-da0c-4bb5-b39a-adefde78b16e.png)
+
 # @totty-front
 
 This project contain a showcase project made by [Guilherme Garibaldi](https://www.linkedin.com/in/guigaribalde/).
