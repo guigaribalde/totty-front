@@ -1,17 +1,18 @@
 import { Box } from '@chakra-ui/react'
 import type { GetStaticProps } from 'next'
-
 import { HeroSection } from '@components/HeroSection'
 import { TopBussinessSection } from '@components/TopBussinessSection'
 import { SellMoreCard } from '@components/SellMoreCard'
 import { IntroCTASection } from '@components/IntroCTASection'
 import Head from 'next/head'
-
-import { business } from '@lib/business'
 import { Business } from '@prisma/client'
+import { prisma } from '@lib/prisma'
 
 export const getStaticProps: GetStaticProps = async () => {
-  const businesses = await business.get({})
+  const businesses = (await prisma.business.findMany({
+    skip: 0,
+    take: 4,
+  })) as Business[]
   return {
     props: {
       businesses,
