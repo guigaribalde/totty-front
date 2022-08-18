@@ -11,29 +11,29 @@ datasource db {
 }
 
 model User {
-  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  id         String    @id @default(auto()) @map("_id") @db.ObjectId
   name       String
   image      String
   email      String
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @default(now())
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @default(now())
   business   Business? @relation(fields: [businessId], references: [id])
   businessId String?
 }
 
 model Business {
-  id          String    @id @default(auto()) @map("_id") @db.ObjectId
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
   name        String
   segment     String
   slug        String
   logo        String?
   description String?
   address     String?
-  contact     Contact?  @relation(fields: [contactId], references: [id])
-  social      Social?   @relation(fields: [socialId], references: [id])
-  employees   MinMax?   @relation(fields: [minMaxId], references: [id])
+  contact     Contact? @relation(fields: [contactId], references: [id])
+  social      Social?  @relation(fields: [socialId], references: [id])
+  employees   MinMax?  @relation(fields: [minMaxId], references: [id])
   valuation   Int?
-  people      People    @relation(fields: [peopleId], references: [id])
+  people      People   @relation(fields: [peopleId], references: [id])
   founded_at  String?
   growth      Float?
   model       String?
@@ -41,7 +41,7 @@ model Business {
   socialId    String?
   minMaxId    String?
   peopleId    String
-  Users     User[]
+  Users       User[]
 }
 
 model Contact {
